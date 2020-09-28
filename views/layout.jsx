@@ -11,11 +11,14 @@ class Layout extends React.Component {
         </head>
         <body>
           <header>
-            <h1>This is the page header</h1>
+            <h1>Tail Trails</h1>
+            <a href="/auth/signup"><div>SIGNUP</div></a>
+            <a href="/auth/login"><div>LOGIN</div></a>
+            <a href="/auth/logout"><div>LOGOUT</div></a>
           </header>
           <main>{this.props.children}</main>
           <footer>
-            <h1>This is my footer</h1>
+      
           </footer>
         </body>
       </html>

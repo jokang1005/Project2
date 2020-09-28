@@ -19,9 +19,11 @@ const mongoose = require("./db/dbconn");
 // ROUTERS
 const authRouter = require("./controllers/auth");
 const testRouter = require("./controllers/test");
+const trailRouter = require("./controllers/trail")
 
 // OTHER IMPORTS
 const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 const methodOverride = require("method-override");
 const morgan = require("morgan");
 
@@ -40,11 +42,12 @@ app.engine("jsx", require("express-react-views").createEngine());
 app.use(
   session({
     secret: SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: process.env.NODE_ENV === "production" },
+    saveUninitialized: false, // don't create session until something stored
+    resave: false, //don't save session if unmodified
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
   })
 );
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true })); //comment if not using forms
 app.use(methodOverride("_method"));
@@ -60,6 +63,7 @@ app.get("/", (req, res) => {
 
 app.use("/auth", authRouter);
 app.use("/test", testRouter);
+app.use("/trail", trailRouter)
 
 ////////////////////////
 //APP LISTENER
@@ -67,3 +71,5 @@ app.use("/test", testRouter);
 app.listen(PORT, () => {
   console.log(`Your are listening on port ${PORT}`);
 });
+
+
