@@ -8,7 +8,6 @@ class Show extends React.Component {
         return (
             <div>
                 <h1>{trails.name}</h1>
-                <a href="/trail/:id/edit"><button>EDIT</button></a>
             </div>
         )
     }

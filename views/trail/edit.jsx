@@ -4,13 +4,16 @@ class Edit extends React.Component {
     render() {
         return(
             <div>
-                <form action={`/trail/${_id}?_method=PUT`} method="POST">
-                    Name: <input type="text" name="name" defaultValue={this.props.trail.name}>
-                    </input>
+                <h1>Edit Trail</h1>
+                <form action="/trail/" method="post">
+                    name: <input type="text" placeholder="name of trail here" name="name"/>
+                    dog-friendly: <input type="checkbox" name= "dog_friendly"/>
+                    <input type="submit" value="ADD TRAIL"/>
+
                 </form>
             </div>
         )
     }
 }
 
-module.exports = Edit
+module.exports = Edit;

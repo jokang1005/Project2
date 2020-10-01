@@ -14,6 +14,7 @@ class Index extends React.Component {
                 <div>
                     <h2>{trail.name}</h2>
                     <a href={`/trail/${trail._id}`}><button>DETAILS</button></a>
+                    <a href={`/trail/edit/${trail._id}`}><button>EDIT</button></a>
                     <form action={`/trail/${trail._id}?_method=DELETE`} method="POST">
                         <input type="submit" value="DELETE"/>
                     </form>
