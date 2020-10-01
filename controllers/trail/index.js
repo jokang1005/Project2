@@ -32,10 +32,32 @@ router.get("/new", (req,res) => {
 })
 
 //Destroy
-
+router.delete("/:id", auth, async(req,res) => {
+    try{
+        await Trail.findByIdAndRemove(req.params.id)
+        res.redirect("/trail/")
+    } catch {err} {
+        console.log (err)
+    }
+})
 
 //Update
+router.put("/trail/:id", (req,res) => {
+    if (req.body.dog_friendly === "on") {
+        req.body.dog_friendly = true;
+    } else {
+        req.body.dog_friendly = false;
+    }
 
+    Trail.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {new: true},
+        (err, updatedModel) => {
+            res.redirect("/trail")
+        }
+    )
+})
 
 //Create
 router.post("/", auth, async(req,res) => {
@@ -54,7 +76,15 @@ router.post("/", auth, async(req,res) => {
 })
 
 //Edit
-
+router.get("/:id/edit", auth, (req,res) => {
+    Trail.findById(req.params.id, (err, foundTrail) => {
+        res.render(
+            "edit.jsx", {
+                trail: foundTrail
+            }
+        )
+    })
+})
 
 //Show
 router.get("/:id", auth, (req,res) => {
