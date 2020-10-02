@@ -1,4 +1,5 @@
 const React = require("react")
+const Layout = require("../layout")
 
 class Show extends React.Component {
     
@@ -6,9 +7,9 @@ class Show extends React.Component {
         console.log(this.props)
         const {trails} = this.props
         return (
-            <div>
+            <Layout>
                 <h1>{trails.name}</h1>
-            </div>
+            </Layout>
         )
     }
 }

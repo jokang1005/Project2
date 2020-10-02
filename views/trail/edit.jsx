@@ -1,10 +1,11 @@
-const React = require("react")
+const React = require("react");
+const Layout = require("../layout");
 
 class Edit extends React.Component {
     render() {
         const {trail} = this.props;
         return(
-            <div>
+            <Layout>
                 <h1>Edit Trail</h1>
                 <form action={`/trail/${trail._id}?_method=PUT`} method="post">
                     name: <input type="text" value={trail.name} placeholder="name of trail here" name="name"/>
@@ -12,7 +13,7 @@ class Edit extends React.Component {
                     <input type="submit" value="ADD TRAIL"/>
 
                 </form>
-            </div>
+            </Layout>
         )
     }
 }
