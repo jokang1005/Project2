@@ -5,6 +5,16 @@ const {Router} = require("express");
 const bcrypt = require("bcryptjs")
 const Trail = require("../../models/trail")
 const auth = require("../authmiddleware")
+const multer = require("multer")
+const upload = multer({dest: 'uploads/'})
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+
+    },
+    filename: function(req,file,cb) {
+        
+    }
+})
 
 ///////////////////////////////////////
 // CREATE ROUTER
@@ -25,13 +35,6 @@ router.get("/", auth, async(req,res) => {
     console.log(err)
 }
 })
-
-//Index without signing up
-// router.get("/", async(req,res) => {
-//     try{
-//         const trails = awa
-//     }
-// })
 
 //New
 router.get("/new", (req,res) => {
@@ -72,7 +75,7 @@ router.put("/:id", auth, async (req,res) => {
 
 
 //Create
-router.post("/", auth, async(req,res) => {
+router.post("/", auth, upload.single('image'), async(req,res) => {
     console.log(req.file)
     if (req.body.dog_friendly === 'on') {
         req.body.dog_friendly = true;

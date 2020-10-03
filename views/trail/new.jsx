@@ -8,14 +8,14 @@ class New extends React.Component {
             <Layout>
                 <h1>New Trail</h1>
             
-                <form action="/trail/" enctype="multipart/form-data" method="POST">
+                <form action="/trail/" method="POST">
                     <div className="form-group">
                         <label htmlFor="name">Trail Name</label>
                         <input type="text" className="form-control" name="name" id="trailname"/>
                     </div>
-                    <div className="form-group" className="custom-file mb-3">
-                        <label htmlFor="image">Choose File</label>
-                        <input type="file" name="image" className="form-control-file" id="image"/>
+                    <div className="form-group">
+                        <label htmlFor="image">Image URL</label>
+                        <input type="text" className="form-control" name="image" id="imageURL"/>
                     </div>
                     <div className="form-check">
                         <input type="checkbox" name="dog_friendly" className="form-check-input" id="dog_friendly"/>
