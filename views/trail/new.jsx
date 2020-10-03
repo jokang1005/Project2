@@ -8,25 +8,25 @@ class New extends React.Component {
             <Layout>
                 <h1>New Trail</h1>
             
-                <form action="/trail/" method="POST">
+                <form action="/trail/" enctype="multipart/form-data" method="POST">
                     <div className="form-group">
                         <label htmlFor="name">Trail Name</label>
-                        <input type="text" class="form-control" name="name" id="trailname"/>
+                        <input type="text" className="form-control" name="name" id="trailname"/>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="imageURL">Image URL</label>
-                        <input type="text" name="image" class="form-control" id="imageURL"/>
+                    <div className="form-group" className="custom-file mb-3">
+                        <label htmlFor="image">Choose File</label>
+                        <input type="file" name="image" className="form-control-file" id="image"/>
                     </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="dog_friendly"/>
-                        <label htmlFor="dog_friendly" for="dog_friendly" name="dog_friendly" value="" className="form-check-label">Dog-friendly</label>
+                    <div className="form-check">
+                        <input type="checkbox" name="dog_friendly" className="form-check-input" id="dog_friendly"/>
+                        <label htmlFor="dog_friendly" for="dog_friendly" className="form-check-label">Dog-friendly</label>
                     </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="public"/>
-                        <label htmlFor="public" value="" for="public" name="public" className="form-check-label">Make Public</label>
+                    <div className="form-check">
+                        <input type="checkbox" name="make_public" className="form-check-input" id="make_public"/>
+                        <label htmlFor="make_public"  for="make_public" className="form-check-label">Make Public</label>
                     </div>
                     <div className="button">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     </div>
                     </form>
             </Layout>

@@ -73,6 +73,7 @@ router.put("/:id", auth, async (req,res) => {
 
 //Create
 router.post("/", auth, async(req,res) => {
+    console.log(req.file)
     if (req.body.dog_friendly === 'on') {
         req.body.dog_friendly = true;
     } else {

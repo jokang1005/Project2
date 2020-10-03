@@ -10,9 +10,9 @@ const {Schema, model} = require("mongoose")
 const trailSchema = new Schema({
     username: {type: String, required: true},
     name: {type:String, required: true},
-    image: {type: String, required: true},
+    image: {data: Buffer, contentType: String},
     dog_friendly: {type:Boolean},
-    public: {type:Boolean}
+    make_public: {type:Boolean}
 },
 {timestamps: true}
 )

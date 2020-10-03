@@ -13,6 +13,9 @@ const { PORT, SECRET } = process.env;
 const express = require("express");
 const app = express();
 
+//Require body-parser
+const bodyParser = require("body-parser")
+
 // IMPORT DATABASE CONNECTIONS
 const mongoose = require("./db/dbconn");
 
@@ -35,6 +38,8 @@ const morgan = require("morgan");
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 
+
+
 ////////////
 //MIDDLEWARE
 ////////////
@@ -54,6 +59,7 @@ app.use(methodOverride("_method"));
 // app.use(express.json()) uncomment if using json
 app.use(morgan("tiny")); //logging
 
+
 ///////////////
 //Routes and Routers
 //////////////
@@ -64,6 +70,8 @@ app.get("/", (req, res) => {
 app.use("/auth", authRouter);
 app.use("/test", testRouter);
 app.use("/trail", trailRouter)
+
+
 
 ////////////////////////
 //APP LISTENER

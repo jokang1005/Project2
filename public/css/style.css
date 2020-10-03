@@ -87,3 +87,20 @@ h1 {
 .button {
     text-align: center;
 }
+
+.card {
+    margin: 50px;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

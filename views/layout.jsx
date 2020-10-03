@@ -18,20 +18,20 @@ class Layout extends React.Component {
         </head>
         <body>
           <header>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+              <ol className="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
               </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
                   <div className="overlay-image0" style={{backgroundImage: 'url("/css/images/dog4.jpg")'}}></div>
                   <div className="container">
                     <h1>Tail Trails</h1>
                   </div>
                 </div>
-                <div class="carousel-item" id="photo1">
+                <div className="carousel-item" id="photo1">
                   <div className="overlay-image1" style={{backgroundImage: 'url("/css/images/dog1.jpg")'}}></div>
                   <div className="container">
                     <h1>Adventure Awaits</h1>
@@ -44,11 +44,11 @@ class Layout extends React.Component {
                   </div>
                 </div>
               </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span className="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                   <span className="carousel-control-next-icon" aria-hidden="true"></span>
                   <span className="sr-only">Next</span>
                 </a>
@@ -58,7 +58,7 @@ class Layout extends React.Component {
           <nav>
             <ul className="nav nav-tabs">
               <li className="nav-item">
-                <a class="nav-link" href="/auth/signup"><IoMdPaw/>SIGNUP</a>
+                <a className="nav-link" href="/auth/signup"><IoMdPaw/>SIGNUP</a>
               </li>
               <li className="nav-item">
                 <a href="/auth/login" className="nav-link"><IoMdPaw/>LOGIN</a>
@@ -66,7 +66,7 @@ class Layout extends React.Component {
               <li className="nav-item">
                 <a href="/auth/logout" className="nav-link"><IoMdPaw/>LOGOUT</a>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <a href="#" className="nav-link disabled" tabindex="-1" area-disabled="true">Disabled</a>
               </li>
             </ul>

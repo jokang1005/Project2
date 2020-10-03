@@ -9,20 +9,22 @@ class Show extends React.Component {
         return (
             <Layout>
                 <h1>{trails.name}</h1>
-                <div class="card" style= {{width: "18rem"}}>
-                    <img src={trails.image} class="card-img-top" alt="Ozark National Forest"/>
-                    <div class="card-body">
-                        <h5 class="card-title">{trails.name}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div className="card" style= {{width: "18rem"}}>
+                    <img src={trails.image} className="card-img-top" alt="Ozark National Forest"/>
+                    <div className="card-body">
+                        <h5 className="card-title">{trails.name}</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>ß
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item">Cras justo odio</li>
+                        <li className="list-group-item">Dapibus ac facilisis in</li>
+                        <li className="list-group-item">Vestibulum at eros</li>
                     </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Edit</a>
-                        <a href="#" class="card-link">Delete</a>
+                    <div className="card-body">
+                        <a href={`/trail/${trails._id}/edit`} className="card-link">Edit</a>
+                        <form action={`/trail/${trails._id}?_method=DELETE`} method="POST">
+                            <input type="submit" value="Delete"/>
+                        </form>
                     </div>
                 </div>
             </Layout>
