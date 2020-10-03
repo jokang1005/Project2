@@ -26,6 +26,13 @@ router.get("/", auth, async(req,res) => {
 }
 })
 
+//Index without signing up
+// router.get("/", async(req,res) => {
+//     try{
+//         const trails = awa
+//     }
+// })
+
 //New
 router.get("/new", (req,res) => {
     res.render("trail/new.jsx")

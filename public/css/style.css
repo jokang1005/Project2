@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 
 header {
@@ -12,6 +13,76 @@ header {
     designed on a 20 by 20 grid. */
   }
 
-img {
-    height: 400px;
+.carousel-item {
+    height: 32rem;
+    background: rgb(196, 193, 193);
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 50px;
+}
+
+/* #photo0 {
+    background-image: url("./images/dog4.jpg");
+}  */
+
+ /* #photo1 {
+    background-image: url("./images/dog1.jpg");
+}
+
+#photo2 {
+    background-image: url("./images/dog2.jpg");
+} */
+
+h1 {
+    font-family: 'Satisfy', cursive;
+    /* font-size:  */
+}
+
+.overlay-image0 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+.overlay-image1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+.overlay-image2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: 100%;
+    opacity: 0.6;
+}
+
+.form-group {
+    margin: 50px;
+}
+
+.button {
+    text-align: center;
 }
