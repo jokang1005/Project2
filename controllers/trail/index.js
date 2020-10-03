@@ -5,16 +5,7 @@ const {Router} = require("express");
 const bcrypt = require("bcryptjs")
 const Trail = require("../../models/trail")
 const auth = require("../authmiddleware")
-const multer = require("multer")
-const upload = multer({dest: 'uploads/'})
-const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
 
-    },
-    filename: function(req,file,cb) {
-        
-    }
-})
 
 ///////////////////////////////////////
 // CREATE ROUTER
@@ -75,15 +66,23 @@ router.put("/:id", auth, async (req,res) => {
 
 
 //Create
-router.post("/", auth, upload.single('image'), async(req,res) => {
-    console.log(req.file)
+router.post("/", auth, async(req,res) => {
     if (req.body.dog_friendly === 'on') {
         req.body.dog_friendly = true;
+        // return "Yes"
     } else {
         req.body.dog_friendly = false;
     }
+    if (req.body.make_public === 'on') {
+        req.body.make_public = true;
+        // return "Yes"
+    } else {
+        req.body.make_public = false;
+    }
+
     try{
     req.body.username = req.session.username
+    console.log (req.body)
     const newTrail = await Trail.create(req.body)
     res.redirect("/trail/")
     } catch(err) {

@@ -14,19 +14,23 @@ class Index extends React.Component {
             <div className="flexbox">
             {trails.map((trail) => {
             return (
-                <div className="card" style={{width: '18rem'}}>
-                <img src={trail.image} className="card-img-top" alt="Addicks Reservoir1"/>
-                <div className="card-body">
-                  <h5 className="card-title">{trail.name}</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div className="flexbox">
+                    <div className="card" style={{width: '20rem'}}>
+                    <img src={trail.image} className="card-img-top" alt={trail.name}/>
+                    <div className="card-body">
+                    <h5 className="card-title">{trail.name}</h5>
+                    <p className="card-text">{trail.detail} </p>
+                    </div>
+                    <ul className="list-group list-group-flush">
+                    <li className="list-group-item">Pet-Friendly: {trail.dog_friendly}</li>
+                    <li className="list-group-item">Public: {trail.make_public}</li>
+                    </ul>
+                    <div className="card-body">
+                    <a href={trail.location} target="_blank" className="card-link">See where this is</a>
+                    <a href={`/trail/${trail._id}`} className="card-link">Details</a>
+                    </div>
                 </div>
-                <ul className="list-group list-group-flush">
-                  <li className="list-group-item">{trail.dog_friendly}</li>
-                </ul>
-                <div className="card-body">
-                  <a href={`/trail/${trail._id}`} className="card-link">DETAILS</a>
                 </div>
-              </div>
             )}
             )}
             </div>

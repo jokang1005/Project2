@@ -17,6 +17,14 @@ class New extends React.Component {
                         <label htmlFor="image">Image URL</label>
                         <input type="text" className="form-control" name="image" id="imageURL"/>
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="detail">Detail</label>
+                        <input type="text" className="form-control" name="detail" id="detail"/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="location">Location</label>
+                        <input type="text" className="form-control" name="location" id="location"/>
+                    </div>
                     <div className="form-check">
                         <input type="checkbox" name="dog_friendly" className="form-check-input" id="dog_friendly"/>
                         <label htmlFor="dog_friendly" for="dog_friendly" className="form-check-label">Dog-friendly</label>

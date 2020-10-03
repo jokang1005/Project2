@@ -7,7 +7,7 @@ class Edit extends React.Component {
         return(
             <Layout>
                 <h1>Edit Trail</h1>
-                <div class = "middle"></div>
+                
                 <form action={`/trail/${trail._id}?method=PUT`} enctype="multipart/form-data" method="POST">
                     <div className="form-group">
                         <label htmlFor="name">Trail Name</label>
