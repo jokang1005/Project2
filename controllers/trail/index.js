@@ -49,16 +49,26 @@ router.put("/:id", auth, async (req,res) => {
     } else {
         req.body.dog_friendly = false;
     }
-    // try {
+    if (req.body.make_public === 'on') {
+        req.body.make_public = true;
+    } else {
+        req.body.make_public = false;
+    }
+
+    try {
         req.body.username = req.session.username
         await Trail.findByIdAndUpdate(
             req.params.id,
             req.body,
             {new: true},
             (err, updatedModel) => {
-                res.redirect("/trail")
+                res.redirect("/trail/")
             }
-        )})
+        )} catch(err) {
+            console.log (err)
+        }
+    })
+        
             // res.redirect('/trail/')
     // } catch(err) {
     //     console.log(err)

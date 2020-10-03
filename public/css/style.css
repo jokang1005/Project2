@@ -5,6 +5,7 @@ header {
     text-align: center;
 }
 
+
 .lnr-paw {
     color: #0F52BA;
     font-size: 40px;
@@ -92,6 +93,8 @@ h5 {
 
 .button {
     text-align: center;
+    padding: 3px;
+    margin: 2px;
 }
 
 .card {

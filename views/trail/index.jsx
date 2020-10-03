@@ -10,6 +10,7 @@ class Index extends React.Component {
             <h1>My Trails</h1>
             <div className="button">
                 <a href="/trail/new" className="button"><button>Add Trail</button></a>
+                <a href="/" className="button"><button>Home</button></a>
             </div>
             <div className="flexbox">
             {trails.map((trail) => {
@@ -22,8 +23,8 @@ class Index extends React.Component {
                     <p className="card-text">{trail.detail} </p>
                     </div>
                     <ul className="list-group list-group-flush">
-                    <li className="list-group-item">Pet-Friendly: {trail.dog_friendly}</li>
-                    <li className="list-group-item">Public: {trail.make_public}</li>
+                    <li className="list-group-item">Pet-Friendly: {`${trail.dog_friendly}`}</li>
+                    <li className="list-group-item">Public: {`${trail.make_public}`}</li>
                     </ul>
                     <div className="card-body">
                     <a href={trail.location} target="_blank" className="card-link">See where this is</a>

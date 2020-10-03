@@ -1,5 +1,6 @@
 const React = require("react");
 const Layout = require("./layout.jsx");
+const Trail = require("../models/trail")
 
 class Index extends React.Component {
   render() {

@@ -4,7 +4,7 @@
 // REMEMBER TO CREATE .env file
 require("dotenv").config();
 const { PORT, SECRET } = process.env;
-
+// const Trail = require("../../models/trail")
 ///////////////////////////
 // Dependencies
 //////////////////////////
@@ -64,7 +64,8 @@ app.use(morgan("tiny")); //logging
 //Routes and Routers
 //////////////
 app.get("/", (req, res) => {
-  res.render("index.jsx", { hello: "Hello World" });
+  // const trail = Trail.find({public: req.params.public})
+  res.render("index.jsx", {hello: "hello world"});
 });
 
 app.use("/auth", authRouter);
